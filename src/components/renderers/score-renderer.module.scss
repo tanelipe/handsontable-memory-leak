@@ -1,0 +1,27 @@
+.scoreCell {
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	min-height: 2rem;
+}
+
+.scoreValue {
+	min-width: 2rem;
+	font-weight: 700;
+}
+
+.scoreTrack {
+	position: relative;
+	flex: 1;
+	min-width: 4rem;
+	height: 0.45rem;
+	overflow: hidden;
+	border-radius: 999px;
+	background: #d9e4ea;
+}
+
+.scoreFill {
+	height: 100%;
+	border-radius: inherit;
+	background: linear-gradient(90deg, #2f6a8a 0%, #5dc19a 100%);
+}

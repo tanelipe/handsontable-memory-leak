@@ -1,0 +1,19 @@
+.ownerCell {
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	min-height: 2rem;
+}
+
+.ownerBadge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.85rem;
+	height: 1.85rem;
+	border-radius: 50%;
+	background: #163041;
+	color: #f8fbfd;
+	font-size: 0.7rem;
+	font-weight: 700;
+}

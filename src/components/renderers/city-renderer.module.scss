@@ -1,0 +1,15 @@
+.cityCell {
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	min-height: 2rem;
+}
+
+.cityMarker {
+	width: 0.75rem;
+	height: 0.75rem;
+	flex: 0 0 auto;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #58b4d8 0%, #2f6a8a 100%);
+	box-shadow: 0 0 0 4px rgba(88, 180, 216, 0.14);
+}
