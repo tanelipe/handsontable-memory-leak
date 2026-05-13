@@ -1,0 +1,30 @@
+diff --git a/node_modules/handsontable/themes/engine/manager.mjs b/node_modules/handsontable/themes/engine/manager.mjs
+index dee43dc..02bbaf0 100644
+--- a/node_modules/handsontable/themes/engine/manager.mjs
++++ b/node_modules/handsontable/themes/engine/manager.mjs
+@@ -88,7 +88,13 @@ export class ThemeManager {
+     this.themeConfig = themeObject.getThemeConfig();
+     this.themeClassName = `${THEME_PREFIX}${this.themeConfig.name}`;
+     if (typeof themeObject.subscribe === 'function') {
+-      themeObject.subscribe(config => {
++
++      if(this._unsubscribe) {
++        this._unsubscribe();
++        this._unsubscribe = null;
++      }
++
++      this._unsubscribe = themeObject.subscribe(config => {
+         var _this$hot;
+         if (!((_this$hot = this.hot) !== null && _this$hot !== void 0 && _this$hot.stylesHandler)) {
+           return;
+@@ -124,6 +130,10 @@ export class ThemeManager {
+    * Destroys the theme manager.
+    */
+   destroy() {
++    if(this._unsubscribe) {
++      this._unsubscribe();
++      this._unsubscribe = null;
++    }
+     this.unmount();
+     this.hot.themeManager = null;
+   }
